@@ -4,16 +4,17 @@ const ImageTitleTextarea = ({blok}) => {
       );
     return (
         <Wrapper className={blok.wrapperTailwind}>
+            <img
+                className={blok.imageTailwind}
+                src={blok.image.filename}
+            />
             <Wrapper className={blok.titleTailwind}>
                 {blok.title}
             </Wrapper>
             <Wrapper className={blok.textareaTailwind}>
                 {blok.textarea}
             </Wrapper>
-            <img
-                className={blok.imageTailwind}
-                src={blok.image.filename}
-            />
+            
         </Wrapper>
     )
 }

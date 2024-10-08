@@ -18,9 +18,11 @@ const General = ({ content, customSectionMap = {} }) => {  // Default value for 
             <Component key={i} blok={section.item} />
           ) : (
             <Wrapper key={i} className={section.wrapperTailwind}>
+              <Wrapper className={section.contentTailwind}>
               {section.item.map((item, j) => (
                 <StoryblokComponent key={j} blok={item} />
               ))}
+              </Wrapper>
             </Wrapper>
           );
         })}

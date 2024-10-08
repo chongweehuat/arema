@@ -9,12 +9,12 @@ const Package = ({ blok }) => {
             {/* Package Name */}
             <h2 className={blok.package_nameTailwind}>{blok.package_name}</h2>
             {/* Package Description */}
-            <p className="text-gray-200 mt-2">{blok.package_description}</p>
+            <p className={blok.package_descriptionTailwind}>{blok.package_description}</p>
 
             <hr className="my-4 border-gray-400" />
 
             {/* Feature Title */}
-            <h3 className="text-yellow-400 text-xl font-semibold">
+            <h3 className={blok.package_titleTailwind}>
               {blok.feature_title}
             </h3>
 
@@ -23,14 +23,22 @@ const Package = ({ blok }) => {
               <ul className="space-y-2">
                 {blok.feature_items.slice(0, Math.ceil(blok.feature_items.length / 2)).map((feature, i) => (
                   <li key={i} className="flex items-center">
-                    <span className="mr-2 text-white">✔</span> {feature.text}
+                    <span className="mr-2">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06L6.53 12.53a.75.75 0 01-1.06 0l-3.25-3.25a.75.75 0 111.06-1.06L6 10.44l6.22-6.22a.75.75 0 011.06 0z" />
+                      </svg>
+                    </span>  {feature.text}
                   </li>
                 ))}
               </ul>
               <ul className="space-y-2">
                 {blok.feature_items.slice(Math.ceil(blok.feature_items.length / 2)).map((feature, i) => (
                   <li key={i} className="flex items-center">
-                    <span className="mr-2 text-white">✔</span> {feature.text}
+                    <span className="mr-2">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06L6.53 12.53a.75.75 0 01-1.06 0l-3.25-3.25a.75.75 0 111.06-1.06L6 10.44l6.22-6.22a.75.75 0 011.06 0z" />
+                      </svg>
+                    </span> {feature.text}
                   </li>
                 ))}
               </ul>
@@ -38,11 +46,13 @@ const Package = ({ blok }) => {
           </div>
 
           {/* Right side: Free Trial Button */}
-          <div className="flex flex-col justify-center items-center bg-indigo-700 rounded-lg p-6 text-center">
-            <h3 className="text-2xl font-bold text-white">Free Trial</h3>
-            <button className="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition text-lg font-medium mt-4 flex items-center space-x-2">
-              <span>✨</span>
-              <span>{blok.action_button_label}</span>
+          <div className={blok.action_wrapperTailwind}>
+            <h3 className={blok.action_titleTailwind}>{blok.action_title}</h3>
+            <button className={blok.action_buttonTailwind}>
+              <img
+                  src={blok.action_button_icon.filename}
+              />
+              <span  className={blok.action_button_labelTailwind}>{blok.action_button_label}</span>
             </button>
           </div>
         </div>
