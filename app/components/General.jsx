@@ -15,7 +15,7 @@ const General = ({ content, customSectionMap = {} }) => {  // Default value for 
         {content.Content?.map((section, i) => {
           const Component = customSectionMap[section.name]; // Check if there's a component for the section name
           return Component ? (
-            <Component key={i} blok={section.item} />
+            <Component key={i} blok={section} />
           ) : (
             <Wrapper key={i} className={section.wrapperTailwind}>
               <Wrapper className={section.contentTailwind}>
