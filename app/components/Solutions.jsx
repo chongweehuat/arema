@@ -6,7 +6,8 @@ const Solutions = ({ content }) => {
   const [activeTab, setActiveTab] = useState("Standard");
 
   const Packages = ({ blok }) => (
-    <section className="py-12">
+    
+    <section className="py-3">
       <div className="container mx-auto">
         {/* Tabs */}
         <div className="flex flex-wrap justify-center space-x-4 mb-8">
@@ -14,7 +15,7 @@ const Solutions = ({ content }) => {
             <button
               key={i}
               onClick={() => setActiveTab(item.package_name)}
-              className={`text-lg font-medium hover:text-blue-500 ${activeTab === item.package_name ? 'text-blue-500 underline' : ''}`}
+              className={`text-lg font-medium text-gray-800 hover:text-blue-500 ${activeTab === item.package_name ? 'text-blue-500 underline' : ''}`}
             >
               {item.package_name}
             </button>
@@ -30,6 +31,7 @@ const Solutions = ({ content }) => {
         </div>
       </div>
     </section>
+    
   );
 
   return (

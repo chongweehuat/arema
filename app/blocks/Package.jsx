@@ -1,8 +1,11 @@
 const Package = ({ blok }) => {
-  console.log(blok);
+  //console.log(blok);
+  const Wrapper = ({ className, children }) => (
+    className ? <div className={className} >{children}</div> : <>{children}</>
+  );
   return (
-    <div className={blok.wrapperTailwind}>
-      <div className={blok.contentTailwind}>
+    <Wrapper className={blok.wrapperTailwind}>
+      <Wrapper className={blok.contentTailwind}>
         <div className="grid grid-cols-3 gap-8">
           {/* Left side: Package Details */}
           <div className="col-span-2">
@@ -56,8 +59,8 @@ const Package = ({ blok }) => {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+      </Wrapper>
+    </Wrapper>
   );
 };
 
